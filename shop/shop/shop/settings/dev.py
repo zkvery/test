@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'verifycations.apps.VerifycationsConfig',
     'corsheaders',
     'users.apps.UsersConfig',
+    'fruit.apps.FruitConfig',
 
 ]
 
@@ -92,7 +93,8 @@ DATABASES = {
     }
 }
 
-
+MEDIA_ROOT = os.path.join(BASE_DIR,'static/upload_img')
+print(BASE_DIR)
 # Password validation
 # https://docs.djangoproject.com/en/2.1/ref/settings/#auth-password-validators
 
@@ -180,3 +182,4 @@ AUTHENTICATION_BACKENDS = [
     # 'social_core.backends.qq.QQOAuth2',                 # 使用QQ登录
     # 'django.contrib.auth.backends.ModelBackend',        # 指定django的ModelBackend类
 ]
+

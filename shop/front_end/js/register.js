@@ -200,6 +200,9 @@ var vm = new Vue({
 			  .then(response => {
 			  		// console.log(response.statusText);
 				  	// 保存后端返回的token数据
+				  	localStorage.token = response.data.token;
+					localStorage.username = response.data.username;
+					localStorage.user_id = response.data.user_id;
 					location.href = '/index.html';
 
 			  })

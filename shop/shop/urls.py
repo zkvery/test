@@ -21,4 +21,5 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     url('^', include('verifycations.urls')),
     url('^', include('users.urls')),
+    url('^', include('fruit.urls')),
 ]

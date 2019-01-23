@@ -1,7 +1,6 @@
 /**
  * Created by fuyang on 2018/11/18.
  */
-
 var vm = new Vue({
     el:'#app',
     data:{
@@ -9,7 +8,8 @@ var vm = new Vue({
         error_pwd:false,
         username:'',
         password:'',
-        error_username_messgae:'',
+
+        error_name_message:'',
         error_pwd_message:'',
         remember:false
     },
@@ -28,8 +28,9 @@ var vm = new Vue({
         // 检查用户名
         check_username: function () {
             if (!this.username){
-                this.error_username = true
-                this.error_username_messgae = '请填写用户名'
+                this.error_username = true;
+                this.error_name_message = '请填写用户名';
+                console.log(this.username.length)
 
             }else {
                 this.error_username = false
@@ -80,8 +81,10 @@ var vm = new Vue({
                     }
 
                 }).catch(error => {
-                    this.error_pwd_messgae = '用户名或者密码错误'
-                    this.error_pwd = true
+                    if(error.response.status==400)
+                    this.error_pwd = true;
+                    this.error_pwd_message='用户名或者密码错误'
+                    console.log(this.error_pwd_message)
                 })
             }
         },
